@@ -4,14 +4,12 @@ import {updateSubredditName} from '../actions'
 
 function SearchBox (props) {
   return (
-    <input name='SearchBox' onChange={searchBoxChange} />
+    <input name='SearchBox' onChange={searchBoxChange} placeholder='newzealand' />
   )
   function searchBoxChange (e) {
-    console.log(e.target.value)
     props.updateSubredditName(e.target.value)
   }
 }
-
 
 function mapDispatchToProps (dispatch) {
   return {

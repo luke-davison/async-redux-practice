@@ -2,3 +2,26 @@
   color: red;
   font-weight: bold;
 }
+
+.post {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.thumbnail {
+  width: 150px;
+  min-height: 90px;
+  border: 1px solid black;
+  margin: 2px;
+}
+
+img {
+  display: block;
+  margin: auto;
+}
+
+.postTitle {
+  width: calc(100% - 250px);
+  margin: auto;
+}

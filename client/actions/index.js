@@ -4,6 +4,9 @@ export const SHOW_ERROR = 'SHOW_ERROR'
 export const RECEIVE_POSTS = 'RECEIVE_POSTS'
 export const REQUEST_POSTS = 'REQUEST_POSTS'
 export const ADD_SUBREDDIT = 'ADD_SUBREDDIT'
+export const SORT_BY_TITLE = 'SORT_BY_TITLE'
+export const SORT_BY_DATE = 'SORT_BY_DATE'
+export const FILTER = 'FILTER'
 
 export const requestPosts = () => {
   return {
@@ -32,6 +35,27 @@ export function updateSubredditName (name) {
   }
 }
 
+export function sortByDate (num) {
+  return {
+    type: SORT_BY_DATE,
+    num
+  }
+}
+
+export function sortByTitle (num) {
+  return {
+    type: SORT_BY_TITLE,
+    num
+  }
+}
+
+export function filterByString (filter) {
+  return {
+    type: FILTER,
+    filter
+  }
+}
+
 export function fetchPosts (subreddit) {
   return (dispatch) => {
     dispatch(requestPosts())
@@ -42,6 +66,11 @@ export function fetchPosts (subreddit) {
           dispatch(showError(err.message))
           return
         }
+        if (res.body.length === 0) {
+          dispatch(showError('No posts found in that subreddit'))
+          return
+        }
+        console.log(res.body)
         dispatch(receivePosts(res.body))
       })
   }

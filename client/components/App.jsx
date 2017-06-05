@@ -5,6 +5,7 @@ import ErrorMessage from './ErrorMessage'
 import LoadSubreddit from './LoadSubreddit'
 import SubredditList from './SubredditList'
 import WaitIndicator from './WaitIndicator'
+import SortButtons from './SortButtons'
 
 const App = () => (
   <div className='app'>
@@ -12,6 +13,7 @@ const App = () => (
     <SearchBox />
     <LoadSubreddit />
     <WaitIndicator />
+    <SortButtons />
     <SubredditList />
   </div>
 )

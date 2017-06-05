@@ -10,6 +10,8 @@ const Subreddit = ({subreddits}) => (
       <Post
         key={i}
         title={post.title}
+        url={`http://www.reddit.com${post.permalink}`}
+        thumbnail={post.thumbnail !== 'self' && post.thumbnail !== 'nsfw' ? post.thumbnail : ''}
         />
     )}
   </div>
